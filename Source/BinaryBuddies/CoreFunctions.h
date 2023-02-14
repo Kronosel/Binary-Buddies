@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+
 #include "CoreFunctions.generated.h"
 
 /**
@@ -13,7 +14,7 @@ UCLASS()
 class BINARYBUDDIES_API UCoreFunctions : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-
+private:
 	UFUNCTION(BlueprintCallable, Category = "Core Functions", meta=(ToolTip="Suma a doua numere"))
 		static int Suma(int numar1, int numar2);
 
@@ -32,5 +33,9 @@ class BINARYBUDDIES_API UCoreFunctions : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, Category = "Core Functions", meta=(ToolTip = "Decrementeaza numarul cu 1"))
 		static int Decrement(int numar);
 
+	UFUNCTION(BlueprintCallable, Category = "File I/O")
+		static FString LoadFileToString(FString filename);
 
+	UFUNCTION(BlueprintCallable, Category = "File I/O")
+		static TArray<FString> LoadFileToStringArray(FString filename);
 };
