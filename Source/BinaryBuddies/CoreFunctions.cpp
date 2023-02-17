@@ -3,6 +3,7 @@
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 #include "HAL/PlatformFilemanager.h"
+#include "Containers/UnrealString.h"
 
 int UCoreFunctions::Suma(int numar1, int numar2)
 {
@@ -12,6 +13,7 @@ int UCoreFunctions::Suma(int numar1, int numar2)
 int UCoreFunctions::Scadere(int numar1, int numar2)
 {
 	return numar1-numar2;
+	
 }
 
 int UCoreFunctions::IfNeg(int numar)
@@ -80,4 +82,12 @@ TArray<FString> UCoreFunctions::LoadFileToStringArray(FString filename)
 		FFileHelper::LoadFileToStringArray(result, *myFile);
 	}
 	return result;
+}
+
+FString UCoreFunctions::GetInputLine(FString sourceString, int linie)
+{
+	FString Str = sourceString;
+	TArray<FString> Parsed;
+	Str.ParseIntoArray(Parsed, TEXT("\n"), true);
+	return Parsed[linie];
 }
