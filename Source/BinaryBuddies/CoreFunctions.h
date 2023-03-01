@@ -14,7 +14,7 @@ UCLASS()
 class BINARYBUDDIES_API UCoreFunctions : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-private:
+protected:
 	UFUNCTION(BlueprintCallable, Category = "Core Functions", meta=(ToolTip="Suma a doua numere"))
 		static int Suma(int numar1, int numar2);
 
@@ -41,4 +41,8 @@ private:
 
 	UFUNCTION(BlueprintCallable, Category = "Core Functions")
 		static FString GetInputLine(FString sourceString, int linie);
+
+
+	UFUNCTION(BlueprintCallable, Category = "Core Functions")
+		static void FileInfoSeparation(FString FileContent);
 };
