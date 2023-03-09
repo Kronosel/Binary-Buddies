@@ -84,25 +84,3 @@ TArray<FString> UCoreFunctions::LoadFileToStringArray(FString filename)
 	return result;
 }
 
-FString UCoreFunctions::GetInputLine(FString sourceString, int linie)
-{
-	FString Str = sourceString;
-	TArray<FString> Parsed;
-	Str.ParseIntoArray(Parsed, TEXT("\n"), true);
-	return Parsed[linie];
-}
-TMap<int32, FString> MapString;
-
-void UCoreFunctions::FileInfoSeparation(FString FileContent)
-{
-	
-	FString Str = LoadFileToString(FileContent);
-	TArray<FString> Parsed;
-	Str.ParseIntoArray(Parsed, TEXT(" "), true);
-	for(int i=0;i<Parsed.Num();i++)
-	{
-		MapString.Add(i, Parsed[i]);
-		
-	}
-
-}

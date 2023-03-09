@@ -39,10 +39,4 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "File I/O")
 		static TArray<FString> LoadFileToStringArray(FString filename);
 
-	UFUNCTION(BlueprintCallable, Category = "Core Functions")
-		static FString GetInputLine(FString sourceString, int linie);
-
-
-	UFUNCTION(BlueprintCallable, Category = "Core Functions")
-		static void FileInfoSeparation(FString FileContent);
 };
